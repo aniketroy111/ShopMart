@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -12,8 +13,11 @@ import { ShoppingCart } from "@material-ui/icons";
 import logo from "../../assets/logo.jpg";
 import useStyles from "./styles";
 
-const Navbar = () => {
+const Navbar = ({cart}) => {
   const classes = useStyles();
+
+  const totalItem = cart?.total_items;
+
 
   return (
     <>
@@ -31,7 +35,7 @@ const Navbar = () => {
           <div className={classes.grow} />
           <div className={classes.button}>
             <IconButton aria-label="Show cart items" color="inherit">
-              <Badge badgeContent={2} color="inherit">
+              <Badge badgeContent={totalItem} color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
