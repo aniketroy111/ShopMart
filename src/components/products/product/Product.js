@@ -10,9 +10,9 @@ const Product = ({ product,onAddToCart }) => {
     return (
         <Card className={classes.root}>
             <CardMedia className={classes.media} image={product.image.url} title={Product.title} />
-            <CardContent>
+            <CardContent className={classes.cardContentMain}>
                 <div className={classes.cardContent}>
-                    <Typography variant="h6" gutterBottom >{product.name}</Typography>
+                    <Typography variant="h6"  >{product.name}</Typography>
                     <Typography variant="h6" >{product.price.formatted_with_symbol}</Typography>
                 </div>
                 <Typography dangerouslySetInnerHTML={{__html:product.description}} variant="body2" color="textSecondary" />
