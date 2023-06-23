@@ -1,10 +1,12 @@
 import React from 'react'
-
-const PaymentForm = () => {
+import { Typography,Button,Divider } from '@material-ui/core'
+import {Elements,CardElement,ElementsConsumer} from '@stripe/react-stripe-js';
+import Review from '../checkoutForm/Review';
+const PaymentForm = ({checkoutToken,cart}) => {
   return (
-    <div>
-      payment form
-    </div>
+    <>
+      <Review cart={cart} checkoutToken={checkoutToken}/>
+    </>
   )
 }
 
